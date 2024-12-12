@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/homePage.dart';
+import 'package:ecommerce_app/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavbar extends StatefulWidget {

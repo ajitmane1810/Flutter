@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/bottomNavbar.dart';
+import 'package:ecommerce_app/screens/bottomnavbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/models/category_model.dart';
 import 'package:ecommerce_app/models/model.dart';
+import 'package:ecommerce_app/screens/productdetails.dart';
 import 'package:ecommerce_app/utlis/colors.dart';
 import 'package:ecommerce_app/widgets/banner.dart';
 import 'package:ecommerce_app/widgets/curated_items.dart';
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             const SizedBox(
-              height: 50,
+              height: 40,
             ),
             // for appbar part
             Padding(
@@ -143,10 +144,12 @@ class _HomePageState extends State<HomePage> {
                   final eCommerceItems = fashionEcommerceApp[index];
                   return Padding(
                       padding: index == 0
-                          ? EdgeInsets.symmetric(horizontal: 20)
-                          : EdgeInsets.only(right: 20),
+                          ? const EdgeInsets.symmetric(horizontal: 20)
+                          : const EdgeInsets.only(right: 20),
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetails(eCommerceApp: eCommerceItems),));
+                            },
                             child:CuratedItems(eCommerceItems: eCommerceItems, size: size) ,
                           ),
                           );
