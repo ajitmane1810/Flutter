@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/models/category_model.dart';
 import 'package:ecommerce_app/models/model.dart';
+import 'package:ecommerce_app/screens/category_products.dart';
 import 'package:ecommerce_app/screens/productdetails.dart';
 import 'package:ecommerce_app/utlis/colors.dart';
 import 'package:ecommerce_app/widgets/banner.dart';
@@ -95,6 +96,23 @@ class _HomePageState extends State<HomePage> {
                   children: List.generate(
                       category.length,
                       (index) => InkWell(
+                            onTap: () {
+                              final filterProducts = fashionEcommerceApp
+                                  .where((item) =>
+                                      item.category.toLowerCase() ==
+                                      category[index].name.toLowerCase())
+                                  .toList();
+                                  // Navigator to the catrgoryProducts screen with the filtered list
+                                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => CategoryProducts(
+                            category:category[index].name,
+                            categoryProducts: filterProducts,
+                          ),
+                        ),
+                      );
+                            },
                             child: Column(
                               children: [
                                 Container(
@@ -143,18 +161,23 @@ class _HomePageState extends State<HomePage> {
                 children: List.generate(fashionEcommerceApp.length, (index) {
                   final eCommerceItems = fashionEcommerceApp[index];
                   return Padding(
-                      padding: index == 0
-                          ? const EdgeInsets.symmetric(horizontal: 20)
-                          : const EdgeInsets.only(right: 20),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetails(eCommerceApp: eCommerceItems),));
-                            },
-                            child:CuratedItems(eCommerceItems: eCommerceItems, size: size) ,
-                          ),
-                          );
-                }
-                ),
+                    padding: index == 0
+                        ? const EdgeInsets.symmetric(horizontal: 20)
+                        : const EdgeInsets.only(right: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductDetails(eCommerceApp: eCommerceItems),
+                            ));
+                      },
+                      child: CuratedItems(
+                          eCommerceItems: eCommerceItems, size: size),
+                    ),
+                  );
+                }),
               ),
             )
           ],
