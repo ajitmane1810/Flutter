@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/homepage.dart';
+import 'package:ecommerce_app/screens/profilepage.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -14,7 +15,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
     const HomePage(),
     const Scaffold(),
     const Scaffold(),
-    const Scaffold()
+    const ProfilePage()
   ];
   @override
   Widget build(BuildContext context) {

@@ -21,34 +21,37 @@ class CategoryProducts extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Icon(Icons.arrow_back_ios_new_rounded),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                    child: SizedBox(
-                        height: 45,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(5),
-                            hintText: "$category's Fashion",
-                            hintStyle: const TextStyle(color: Colors.black38),
-                            filled: true,
-                            fillColor: fbackgroundColor2,
-                            focusedBorder: const OutlineInputBorder(
+            child: Container(
+              padding: EdgeInsets.only(top: 10),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(Icons.arrow_back_ios_new_rounded),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                      child: SizedBox(
+                          height: 45,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.all(5),
+                              hintText: "$category's Fashion",
+                              hintStyle: const TextStyle(color: Colors.black38),
+                              filled: true,
+                              fillColor: fbackgroundColor2,
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              suffixIcon: const Icon(Icons.search_rounded,
+                                  color: Colors.black38),
+                                   border: const OutlineInputBorder(
                                 borderSide: BorderSide.none),
-                            suffixIcon: const Icon(Icons.search_rounded,
-                                color: Colors.black38),
-                                 border: const OutlineInputBorder(
-                              borderSide: BorderSide.none),
-                          ),
-                        )))
-              ],
+                            ),
+                          )))
+                ],
+              ),
             ),
           ),
           const SizedBox(
