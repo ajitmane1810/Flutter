@@ -74,7 +74,7 @@ class ProfilePage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfileEdit(),
+                              builder: (context) => const ProfileEditPage(),
                             ));
                       },
                     ),

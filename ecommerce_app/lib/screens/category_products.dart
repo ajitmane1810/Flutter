@@ -22,7 +22,7 @@ class CategoryProducts extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
-              padding: EdgeInsets.only(top: 10),
+              padding:const EdgeInsets.only(top: 10),
               child: Row(
                 children: [
                   InkWell(
